@@ -23,8 +23,8 @@ if __name__ == '__main__':
                         help='Training data directory')
     parser.add_argument('--style_path', type=str, default='style/mosaic.jpg',
                         help='Style image path')
-    parser.add_argument('--result_dir', type=str, default='result',
-                        help='Result image directory')
+    parser.add_argument('--result_dir', type=str, default='check',
+                        help='Result image directory for checking')
     parser.add_argument('--weight_dir', type=str, default='weight',
                         help='Weight of model directory')
     parser.add_argument('--num_epoch', type=int, default=2,

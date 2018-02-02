@@ -98,7 +98,7 @@ class Solver():
                     result_dir = os.path.join(self.result_dir, style_name)
                     
                     if os.path.exists(result_dir) is not True:
-                        os.mkdir(result_dir)
+                        os.makedirs(result_dir)
                         
                     file_name = str(epoch) + '_' + str(iters) + '.png'
                     file_name = os.path.join(result_dir, file_name)
