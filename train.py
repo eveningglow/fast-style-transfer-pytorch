@@ -21,7 +21,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--trn_dir', type=str, default='data/train',
                         help='Training data directory')
-    parser.add_argument('--style_path', type=str, default='style/mosaic.jpg',
+    parser.add_argument('--style_path', type=str, default='style/abstract_1.png',
                         help='Style image path')
     parser.add_argument('--result_dir', type=str, default='check',
                         help='Result image directory for checking')
@@ -41,8 +41,6 @@ if __name__ == '__main__':
                         help='Weight for style loss')
     parser.add_argument('--show_every', type=int, default=500,
                         help='How often do you want to check result?')
-    parser.add_argument('--save_every', type=int, default=5000,
-                        help='How often do you want to save weight?')
     args = parser.parse_args()
     main(args)
     
