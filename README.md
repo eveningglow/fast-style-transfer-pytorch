@@ -19,7 +19,7 @@ python test.py --weight_path='weight/abstract_1.weight', --content_path='content
   
 ### Implementation tips
 #### 1. lambda_s
-The loss function is `loss = lambda_c * content_loss + lambda_s * style_loss.`  
+The loss function is `loss = lambda_c * content_loss + lambda_s * style_loss`  
 __lambda_s__ has a heavy influence on the result images. Following is the list of value I used.
 
 Style image | lambda_s
