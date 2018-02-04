@@ -34,18 +34,18 @@ def main(args):
     
     out_dir, _ = os.path.split(args.output_path)
     if os.path.exists(out_dir) is not True:
-        os.mkdir(out_dir)
+        os.makedirs(out_dir)
 
     torchvision.utils.save_image(result_img.data, args.output_path, nrow=1)
     print('Saved image : ' + args.output_path)
     
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--weight_path', type=str, default='weight/picasso.weight',
+    parser.add_argument('--weight_path', type=str, default='weight/abstract_1.weight',
                         help='Model weight path')
-    parser.add_argument('--content_path', type=str, default='content/korea_univ.png',
+    parser.add_argument('--content_path', type=str, default='content/city.png',
                         help='Content img path')
-    parser.add_argument('--output_path', type=str, default='example/korea_univ_picasso.png',
+    parser.add_argument('--output_path', type=str, default='result/abstract_1.png',
                         help='Output img path')
     args = parser.parse_args()
     main(args)
