@@ -109,10 +109,6 @@ class Solver():
                     
                     util.save_img(file_name, content_img.data[0], _style_img[0], out_img.data[0])
                     
-                if iters % self.save_every == 0:
-                    if os.path.exists(self.weight_dir) is not True:
-                        os.mkdir(self.weight_dir)
-                    
         weight_name = style_name + '.weight'
         weight_path = os.path.join(self.weight_dir, weight_name)
         torch.save(self.trans_net.state_dict(), weight_path)
