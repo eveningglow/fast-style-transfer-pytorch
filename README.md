@@ -1,5 +1,6 @@
 # fast-style-transfer-pytorch
 Implementation of [Perceptual Losses for Real-Time Style Transfer and Super-Resolution](https://arxiv.org/abs/1603.08155) using __pytorch__.
+<p align="center"><img width="100%" src="result/model.png" /></p>
   
 ## Results
 You can see larger result images in `result/city`
