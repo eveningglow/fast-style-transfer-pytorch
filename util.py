@@ -1,4 +1,3 @@
-# utils.py
 import torch
 from torch.autograd import Variable
 import torchvision
@@ -6,8 +5,7 @@ import torchvision.transforms as Transforms
 from PIL import Image
 import numpy as np
 
-# util.py
-# Tensor, (256, 256), 0 ~ 255
+# Load image with size of parameter size
 def load_img(path, size=None):
     img = Image.open(path).convert('RGB')
 
@@ -23,6 +21,7 @@ def load_img(path, size=None):
     
     return img
 
+# Make image with shape of [content | result | style] and save it
 def save_img(img_name, content, style, result):
     _, H, W = content.size()
     size = (H, W)
@@ -30,11 +29,12 @@ def save_img(img_name, content, style, result):
     img = torch.stack([content, result, style], dim=0)
     torchvision.utils.save_image(img, img_name, nrow=3)
 
-# load_weight 후 첫 번째 forward 결과 -1.5 ~ 1.5로 ground truth와 동일
+# Load pretrained weight
 def load_weight(model, path):
     model.load_state_dict(torch.load(path))
     return model
 
+# Normalization with mean and std of VGG
 def vgg_norm(var):
     if torch.cuda.is_available():
         dtype = torch.cuda.FloatTensor
@@ -55,6 +55,7 @@ def vgg_norm(var):
     normed = var.sub(mean).div(std)
     return normed
 
+# Denormalization with mean and std of VGG
 def vgg_denorm(var):
     if torch.cuda.is_available():
         dtype = torch.cuda.FloatTensor
@@ -75,6 +76,7 @@ def vgg_denorm(var):
     normed = var.mul(std).add(mean)
     return normed
 
+# Get gram matrix
 def gram(var_list):
     gram_list = []
     
