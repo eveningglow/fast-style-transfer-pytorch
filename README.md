@@ -4,7 +4,11 @@ Implementation of [Perceptual Losses for Real-Time Style Transfer and Super-Reso
   
 ## Results
 You can see larger result images in `result/city`
-<p align="center"><img width="100%" src="result/result.png" /></p>
+<p align="center"><img width="100%" src="result/result.png" /></p>  
+
+## Prerequisites
+* [Python 3.5+](https://www.continuum.io/downloads)
+* [PyTorch 0.2.0](http://pytorch.org/)  
 
 ## How to run
 ### Train
